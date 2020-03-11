@@ -3,7 +3,7 @@
 ##server2.company.com mail ansible_host=ansible_connection=winrm ansible_ssh_pass=P@#
 ##web http_port=8081 snmp_port=161-162 inter_ip_range=192.0.2.0
 
-localhost ansible_connection=localhost
+localhost ansible_connection=local
 
 [all:children]
 centos
