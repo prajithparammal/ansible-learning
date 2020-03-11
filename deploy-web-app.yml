@@ -1,0 +1,12 @@
+---
+name: Deploy Web Application
+hosts: db_and_web_server
+tasks:
+  - name: Install dependencies
+  - name: Install MySQL database
+  - name: Start Mysql Service
+  - name: Create Applicaton database
+  - name: Create Application DB user
+  - name: Install Python Flask Dependencies
+  - name: Copy web-server code
+  - name: Run web-server
