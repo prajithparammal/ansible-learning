@@ -5,6 +5,7 @@
 
 localhost ansible_connection=local
 
+
 [all:children]
 centos
 
