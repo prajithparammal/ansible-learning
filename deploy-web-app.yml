@@ -16,9 +16,12 @@
       - mariadb-server
       - mariadb-libs
       - mariadb
+      - MySQL-python
+      - perl-DBD-MySQL
+
 
   - name: Start MySql service
-    service: name=mysql state=started enabled=yes
+    service: name=mariadb state=started enabled=yes
 
   - name: Create Application database
     mysql_db: name=employee_db state=present
@@ -42,7 +45,6 @@
     git:
       repo: https://github.com/mmumshad/simple-webapp.git
       dest: /opt/
-
 
   - name: Start web server
     shell: FLASK_APP=/opt/simple-webapp/app.py && nohup flask run --host=0.0.0.0 &
