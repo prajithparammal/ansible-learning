@@ -29,7 +29,7 @@
   - name: Create database user
     mysql_user:
       name: db_user
-      password: Passw0rd
+      password: Passwd@123
       priv: '*.*:ALL'
       state: present
       host: '%'
