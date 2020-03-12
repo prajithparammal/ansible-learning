@@ -32,7 +32,6 @@
       password: Passwd@123
       priv: '*.*:ALL'
       state: present
-      host: '%'
 
   - name: Install python Flask dependency
     pip:
