@@ -32,6 +32,7 @@
       password: Passw0rd
       priv: '*.*:ALL'
       state: present
+      host: '%'
 
   - name: Install python Flask dependency
     pip:
@@ -41,10 +42,12 @@
       - flask
       - flask-mysql
 
-  - name: copy source code from git
-    git:
-      repo: https://github.com/mmumshad/simple-webapp.git
-      dest: /opt/simple-webapp
+#  - name: copy source code from git
+#    git:
+#      repo: https://github.com/mmumshad/simple-webapp.git
+#     dest: /opt/simple-webapp
+  - name: copy source code
+    copy: src=files/app.py  dest=/opt/app.py
 
   - name: Start web server
-    shell: FLASK_APP=/opt/simple-webapp/app.py && nohup flask run --host=0.0.0.0 &
+    shell: FLASK_APP=/opt/app.py && nohup flask run --host=0.0.0.0 &
