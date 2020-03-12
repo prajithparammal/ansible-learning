@@ -42,10 +42,6 @@
       - flask
       - flask-mysql
 
-#  - name: copy source code from git
-#    git:
-#      repo: https://github.com/mmumshad/simple-webapp.git
-#     dest: /opt/simple-webapp
   - name: copy source code
     copy: src=files/app.py  dest=/opt/app.py
 
