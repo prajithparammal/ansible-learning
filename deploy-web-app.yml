@@ -10,7 +10,7 @@
       - python-devel
       - python2-pip
 
-  - name: Install MySQL database
+  - name: Install mariadb database
     package: name="{{ item }}" state=installed
     with_items:
       - mariadb-server
@@ -29,7 +29,7 @@
   - name: Create database user
     mysql_user:
       name: db_user
-      password: Passwd@123
+      password: Passw0rd
       priv: '*.*:ALL'
       state: present
 
@@ -44,7 +44,7 @@
   - name: copy source code from git
     git:
       repo: https://github.com/mmumshad/simple-webapp.git
-      dest: /opt/
+      dest: /opt/simple-webapp
 
   - name: Start web server
     shell: FLASK_APP=/opt/simple-webapp/app.py && nohup flask run --host=0.0.0.0 &

@@ -1,12 +1,12 @@
 ---
-- hosts: all
+- hosts: centos07-hashivault
   become: yes
   become_user: root
   become_method: sudo
   roles:
     - vault
 
-- hosts: all
+- hosts: centos07-hashivault
   vars:
     unseal_keys_dir_output: "{{ playbook_dir }}/unsealKey"
     root_token_dir_output: "{{ playbook_dir }}/rootKey"
