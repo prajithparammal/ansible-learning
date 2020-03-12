@@ -10,8 +10,8 @@ localhost ansible_connection=local
 centos
 
 [centos]
-db_and_web_server   ansible_host=awxcore.eastus.cloudapp.azure.com
-centos07-b          ansible_host=prajith-devopslab.eastus.cloudapp.azure.com
+db_and_web_server    ansible_host=awxcore.eastus.cloudapp.azure.com
+centos07-hashivault  ansible_host=prajith-devopslab.eastus.cloudapp.azure.com
 
 [centos:vars]
 ansible_user=prajith
